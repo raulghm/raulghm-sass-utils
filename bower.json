@@ -1,0 +1,22 @@
+{
+  "name": "raulghm-sass-utils",
+  "version": "0.0.1",
+  "homepage": "https://github.com/raulghm/raulghm-sass-utils",
+  "authors": "Raúl Hernández",
+  "description": "",
+  "main": [
+    "less/social-media-colors.less",
+    "stylus/_social-media-colors.styl",
+    "sass/social-media-colors.scss"
+  ],
+  "keywords": [
+    "social media colors",
+    "social color",
+    "networks colors",
+    "colors",
+    "color"
+  ],
+  "license": "MIT",
+  "ignore": {},
+  "dependencies": {}
+}
