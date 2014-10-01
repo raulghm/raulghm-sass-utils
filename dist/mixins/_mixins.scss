@@ -1,0 +1,15 @@
+.cf {
+	@extend .clearfix;
+}
+
+.d-table {
+	display: table;
+	height: 100%;
+	width: 100%;
+
+	.d-table-cell {
+		height: 100%;
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
