@@ -1,7 +1,9 @@
+// clearfix
 .cf {
 	@extend .clearfix;
 }
 
+// table cell
 .d-table {
 	display: table;
 	height: 100%;
@@ -12,4 +14,35 @@
 		display: table-cell;
 		vertical-align: middle;
 	}
+}
+
+// triangle
+@mixin triangle() {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 10px 10px 10px;
+	border-color: transparent transparent #000 transparent;
+}
+
+// icon helper fontawesome
+@mixin fa-icon($icon) {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: lighter;
+
+  &:before {
+    @extend .fa-#{$icon};
+  }
+}
+
+// icon helper fo
+@mixin fo-icon($icon) {
+  font-family: fo;
+  font-style: normal;
+  font-weight: lighter;
+
+  &:before {
+    @extend .fo-#{$icon};
+  }
 }
