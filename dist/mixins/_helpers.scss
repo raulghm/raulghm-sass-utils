@@ -45,7 +45,7 @@ $bp-small 	 : 24em;
 	@media only screen and (min-width: $bp-small) {	@content;	}
 }
 
-// resopnsive report helper
+// responsive report helper
 // how use:
 // body { @include responsive-report(); }
 @mixin responsive-report() {
