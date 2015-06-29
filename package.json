@@ -17,7 +17,7 @@
     "sass helpers"
   ],
   "main": [
-    "dist/mixins/_mixins.scss"
+    "./dist/index.scss"
   ],
   "license": "MIT",
   "ignore": [

@@ -12,12 +12,12 @@
   ],
   "keywords": [
     "sass",
-    "scss utils"
+    "scss utils",
     "sass utils",
     "sass helpers"
   ],
   "main": [
-    "dist/mixins/_mixins.scss"
+    "./dist/index.scss"
   ],
   "license": "MIT",
   "ignore": [
