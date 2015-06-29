@@ -1,0 +1,6 @@
+// font-size helper
+@mixin font-size($size) {
+	// html font-size is 62.5% (base 10)
+  font-size: ($size * 10) + px; // fallback in px
+  font-size: $size + rem;
+}

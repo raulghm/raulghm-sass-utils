@@ -1,21 +1,3 @@
-// clearfix
-.cf {
-	@extend .clearfix;
-}
-
-// table cell
-.d-table {
-	display: table;
-	height: 100%;
-	width: 100%;
-
-	.d-table-cell {
-		height: 100%;
-		display: table-cell;
-		vertical-align: middle;
-	}
-}
-
 // triangle
 @mixin triangle() {
 	width: 0;

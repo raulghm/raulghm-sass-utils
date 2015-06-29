@@ -1,0 +1,17 @@
+// Test
+
+@import '../../dist/index';
+
+body {
+	@include responsive-report();
+}
+
+.Test {
+	display: block;
+	@extend .cf;
+	@extend .clearfix;
+	@extend .u-cf;
+	@extend .u-clearfix;
+	@include clearfix();
+	@include font-size(2);
+}

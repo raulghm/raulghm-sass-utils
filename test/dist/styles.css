@@ -1,0 +1,380 @@
+@charset "UTF-8";
+/*
+	raulghm sass utils
+	https://github.com/raulghm/raulghm-sass-utils
+	Licensed under the MIT license - http://opensource.org/licenses/MIT
+	Copyright (c) 2015 Raúl Hernández
+*/
+/**
+ * Contain floats
+ *
+ * Make an element expand to contain floated children.
+ * Uses pseudo-elements (micro clearfix).
+ *
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of the
+ *    element.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/**
+ * Vertical alignment utilities
+ * Depends on an appropriate `display` value.
+ */
+.u-alignBaseline {
+  vertical-align: baseline !important; }
+
+.u-alignBottom {
+  vertical-align: bottom !important; }
+
+.u-alignMiddle {
+  vertical-align: middle !important; }
+
+.u-alignTop {
+  vertical-align: top !important; }
+
+/**
+ * Display-type utilities
+ */
+.u-block {
+  display: block !important; }
+
+.u-hidden {
+  display: none !important; }
+
+/**
+ * Completely remove from the flow but leave available to screen readers.
+ */
+.u-hiddenVisually {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; }
+
+.u-inline {
+  display: inline !important; }
+
+/**
+ * 1. Fix for Firefox bug: an image styled `max-width:100%` within an
+ * inline-block will display at its default size, and not limit its width to
+ * 100% of an ancestral container.
+ */
+.u-inlineBlock {
+  display: inline-block !important;
+  max-width: 100%;
+  /* 1 */ }
+
+.u-table {
+  display: table !important; }
+
+.u-tableCell {
+  display: table-cell !important; }
+
+.u-tableRow {
+  display: table-row !important; }
+
+.d-table {
+  display: table;
+  height: 100%;
+  width: 100%; }
+  .d-table .d-table-cell {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle; }
+
+/**
+ * Contain floats
+ *
+ * Make an element expand to contain floated children.
+ * Uses pseudo-elements (micro clearfix).
+ *
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of the
+ *    element.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.u-cf:before,
+.Test:before,
+.u-cf:after,
+.Test:after,
+.u-clearfix:before,
+.Test:before,
+.u-clearfix:after,
+.Test:after,
+.cf:before,
+.Test:before,
+.cf:after,
+.Test:after,
+.clearfix:before,
+.Test:before,
+.clearfix:after, .Test:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.u-cf:after,
+.Test:after,
+.u-clearfix:after,
+.Test:after,
+.cf:after,
+.Test:after,
+.clearfix:after, .Test:after {
+  clear: both; }
+
+/**
+ * New block formatting context
+ *
+ * This affords some useful properties to the element. It won't wrap under
+ * floats. Will also contain any floated children.
+
+ * N.B. This will clip overflow. Use the alternative method below if this is
+ * problematic.
+ */
+.u-nbfc {
+  overflow: hidden !important; }
+
+/**
+ * New block formatting context (alternative)
+ *
+ * Alternative method when overflow must not be clipped.
+ *
+ * 1. Create a new block formatting context (NBFC).
+ * 2. Avoid shrink-wrap behaviour of table-cell.
+ *
+ * N.B. This breaks down in some browsers when elements within this element
+ * exceed its width.
+ */
+.u-nbfcAlt {
+  display: table-cell !important;
+  /* 1 */
+  width: 10000px !important;
+  /* 2 */ }
+
+/**
+ * Floats
+ */
+.u-floatLeft {
+  float: left !important; }
+
+.u-floatRight {
+  float: right !important; }
+
+/**
+ * Clean link
+ *
+ * A link without any text-decoration at all.
+ */
+.u-linkClean,
+.u-linkClean:hover,
+.u-linkClean:focus,
+.u-linkClean:active {
+  text-decoration: none !important; }
+
+/**
+ * Link complex
+ *
+ * A common pattern is to have a link with several pieces of text and/or an
+ * icon, where only one piece of text should display the underline when the
+ * link is the subject of user interaction.
+ *
+ * Example HTML:
+ *
+ * <a class="u-linkComplex" href="#">
+ *   Link complex
+ *   <span class="u-linkComplexTarget">target</span>
+ * </a>
+ */
+.u-linkComplex,
+.u-linkComplex:hover,
+.u-linkComplex:focus,
+.u-linkComplex:active {
+  text-decoration: none !important; }
+
+.u-linkComplex:hover .u-linkComplexTarget,
+.u-linkComplex:focus .u-linkComplexTarget,
+.u-linkComplex:active .u-linkComplexTarget {
+  text-decoration: underline !important; }
+
+/**
+ * Block-level link
+ *
+ * Combination of traits commonly used in vertical navigation lists.
+ */
+.u-linkBlock,
+.u-linkBlock:hover,
+.u-linkBlock:focus,
+.u-linkBlock:active {
+  display: block !important;
+  text-decoration: none !important; }
+
+.u-posAbsolute {
+  position: absolute !important; }
+
+/**
+ * Pins to all corners by default. But when a width and/or height are
+ * provided, the element will be centered in its nearest relatively-positioned
+ * ancestor.
+ */
+.u-posAbsoluteCenter {
+  bottom: 0 !important;
+  left: 0 !important;
+  margin: auto !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important; }
+
+/**
+ * 1. Make sure fixed elements are promoted into a new layer, for performance
+ *    reasons.
+ */
+.u-posFixed {
+  position: fixed !important;
+  backface-visibility: hidden;
+  /* 1 */ }
+
+.u-posRelative {
+  position: relative !important; }
+
+.u-posStatic {
+  position: static !important; }
+
+/**
+ * Word breaking
+ *
+ * Break strings when their length exceeds the width of their container.
+ */
+.u-textBreak {
+  word-wrap: break-word !important; }
+
+/**
+ * Horizontal text alignment
+ */
+.u-textCenter {
+  text-align: center !important; }
+
+.u-textLeft {
+  text-align: left !important; }
+
+.u-textRight {
+  text-align: right !important; }
+
+/**
+ * Inherit the ancestor's text color.
+ */
+.u-textInheritColor {
+  color: inherit !important; }
+
+/**
+ * Enables font kerning in all browsers.
+ * http://blog.typekit.com/2014/02/05/kerning-on-the-web/
+ *
+ * 1. Chrome (not Windows), Firefox, Safari 6+, iOS, Android
+ * 2. Chrome (not Windows), Firefox, IE 10+
+ * 3. Safari 7 and future browsers
+ */
+.u-textKern {
+  text-rendering: optimizeLegibility;
+  /* 1 */
+  font-feature-settings: "kern" 1;
+  /* 2 */
+  font-kerning: normal;
+  /* 3 */ }
+
+/**
+ * Prevent whitespace wrapping
+ */
+.u-textNoWrap {
+  white-space: nowrap !important; }
+
+/**
+ * Text truncation
+ *
+ * Prevent text from wrapping onto multiple lines, and truncate with an
+ * ellipsis.
+ *
+ * 1. Ensure that the node has a maximum width after which truncation can
+ *    occur.
+ * 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
+ *    nodes.
+ */
+.u-textTruncate {
+  max-width: 100%;
+  /* 1 */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+  /* 2 */ }
+
+body:after {
+  content: "bp-small";
+  font-size: 150%;
+  font-weight: 300;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(163, 43, 41, 0.8);
+  color: #fff;
+  padding: 0;
+  z-index: 99999; }
+
+@media only screen and (min-width: 29.75em) {
+  body:after {
+    content: "bp-small-2";
+    background-color: rgba(102, 163, 41, 0.8); } }
+
+@media only screen and (min-width: 39.8em) {
+  body:after {
+    content: "bp-small-3";
+    background-color: rgba(41, 163, 163, 0.8); } }
+
+@media only screen and (min-width: 46.8em) {
+  body:after {
+    content: "bp-medium";
+    background-color: rgba(102, 41, 163, 0.8); } }
+
+@media only screen and (min-width: 48em) {
+  body:after {
+    content: "bp-medium-2";
+    background-color: rgba(163, 41, 41, 0.8); } }
+
+@media only screen and (min-width: 50em) {
+  body:after {
+    content: "bp-large";
+    background-color: rgba(41, 104, 163, 0.8); } }
+
+@media only screen and (min-width: 54.5em) {
+  body:after {
+    content: "bp-large-2";
+    background-color: rgba(82, 163, 41, 0.8); } }
+
+@media only screen and (min-width: 60em) {
+  body:after {
+    content: "bp-xl";
+    background-color: rgba(163, 41, 163, 0.8); } }
+
+@media only screen and (min-width: 67em) {
+  body:after {
+    content: "bp-xl-2";
+    background-color: rgba(163, 41, 163, 0.8); } }
+
+.Test {
+  display: block;
+  font-size: 20px;
+  font-size: 2rem; }
+  .Test:before,
+  .Test:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  .Test:after {
+    clear: both; }
