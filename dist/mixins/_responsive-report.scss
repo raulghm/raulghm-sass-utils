@@ -1,9 +1,13 @@
-// responsive report helper
-// how use:
-// body { @include responsive-report(); }
+/**
+ * Responsive report helper
+ *
+ * how use:
+ * body { @include responsive-report(); }
+ */
+
 @mixin responsive-report() {
 	&:after {
-		content: "bp-small";
+		content: "bp-sm";
 		font-size: 150%;
 		font-weight: 300;
 		position: fixed;
@@ -16,44 +20,44 @@
 		z-index: 99999;
 	}
 
-	@media only screen and (min-width: $bp-small-2) {
+	@media only screen and (min-width: $bp-sm-2) {
 		&:after {
-			content: "bp-small-2";
+			content: "bp-sm-2";
 			background-color: hsla(90,60%,40%,0.8);
 		}
 	}
 
-	@media only screen and (min-width: $bp-small-3) {
+	@media only screen and (min-width: $bp-sm-3) {
 		&:after {
-			content: "bp-small-3";
+			content: "bp-sm-3";
 			background-color: hsla(180,60%,40%,0.8);
 		}
 	}
 
-	@media only screen and (min-width: $bp-medium) {
+	@media only screen and (min-width: $bp-md) {
 		&:after {
-			content: "bp-medium";
+			content: "bp-md";
 			background-color: hsla(270,60%,40%,0.8);
 		}
 	}
 
-	@media only screen and (min-width: $bp-medium-2) {
+	@media only screen and (min-width: $bp-md-2) {
 		&:after {
-			content: "bp-medium-2";
+			content: "bp-md-2";
 			background-color: hsla(360,60%,40%,0.8);
 		}
 	}
 
-	@media only screen and (min-width: $bp-large) {
+	@media only screen and (min-width: $bp-lg) {
 		&:after {
-			content: "bp-large";
+			content: "bp-lg";
 			background-color: hsla(209,60%,40%,0.8);
 		}
 	}
 
-	@media only screen and (min-width: $bp-large-2) {
+	@media only screen and (min-width: $bp-lg-2) {
 		&:after {
-			content: "bp-large-2";
+			content: "bp-lg-2";
 			background-color: hsla(100,60%,40%,0.8);
 		}
 	}
